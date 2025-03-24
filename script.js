@@ -1,5 +1,7 @@
 let computerchoice ="";
 let humanchoice;
+let humanScore  = 0;
+let computerScore = 0;
 function getComputerChoice(){
     randonchoice = Math.round(Math.random() *100)
     console.log(randonchoice)
@@ -9,12 +11,10 @@ function getComputerChoice(){
         computerchoice = "Paper";
     else
         computerchoice = "Scissor";
-    console.log(computerchoice)
+    return(computerchoice.toUpperCase());
 }
 function getHumanChoice(){
-    console.log("1.Rock")
-    console.log("2.Paper")
-    console.log("3.Scissor")
+    let humanchoice;
     let YourChoice= prompt("1.Rock \n2.Paper \n3.Scissor\nEnter your choice");
     if(YourChoice == 1)
         humanchoice = "Rock";
@@ -22,9 +22,21 @@ function getHumanChoice(){
         humanchoice = "Paper";
     else
         humanchoice = "Scissor";
-    console.log(humanchoice)
-
+    return humanchoice.toUpperCase();
 }
+function playRound(humanchoice,computerchoice){
+    if(humanchoice==computerchoice){
+        humanScore++;
+        console.log("You Win! ",humanchoice," beats ",computerchoice);
+    }
+    else{
+        console.log("You Lose! ",computerchoice," beats ",humanchoice);
+        computerScore++;
+    }
+}
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
+playRound(humanSelection, computerSelection);
 getComputerChoice();
 getHumanChoice();
