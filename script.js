@@ -1,4 +1,5 @@
-let computerchoice =0;
+let computerchoice ="";
+let humanchoice;
 function getComputerChoice(){
     randonchoice = Math.round(Math.random() *100)
     console.log(randonchoice)
@@ -10,5 +11,20 @@ function getComputerChoice(){
         computerchoice = "Scissor";
     console.log(computerchoice)
 }
+function getHumanChoice(){
+    console.log("1.Rock")
+    console.log("2.Paper")
+    console.log("3.Scissor")
+    let YourChoice= prompt("1.Rock \n2.Paper \n3.Scissor\nEnter your choice");
+    if(YourChoice == 1)
+        humanchoice = "Rock";
+    else if(YourChoice ==2)
+        humanchoice = "Paper";
+    else
+        humanchoice = "Scissor";
+    console.log(humanchoice)
+
+}
 
 getComputerChoice();
+getHumanChoice();
